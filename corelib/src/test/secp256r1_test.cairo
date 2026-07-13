@@ -62,7 +62,7 @@ fn get_message_and_signature() -> (u256, Signature, u256, u256, Secp256r1Point) 
 }
 
 #[test]
-#[available_gas(100000000)]
+#[available_gas(l2_gas: 100000000)]
 fn test_verify_signature() {
     let (msg_hash, signature, _, _, public_key) = get_message_and_signature();
     let is_valid = is_valid_signature::<
@@ -72,7 +72,7 @@ fn test_verify_signature() {
 }
 
 #[test]
-#[available_gas(100000000)]
+#[available_gas(l2_gas: 100000000)]
 fn test_verify_signature_invalid_signature() {
     let (msg_hash, signature, _, _, public_key) = get_message_and_signature();
     let is_valid = is_valid_signature::<
@@ -82,7 +82,7 @@ fn test_verify_signature_invalid_signature() {
 }
 
 #[test]
-#[available_gas(100000000)]
+#[available_gas(l2_gas: 100000000)]
 fn test_verify_signature_overflowing_signature_r() {
     let (msg_hash, mut signature, _, _, public_key) = get_message_and_signature();
     let is_valid = is_valid_signature::<
@@ -92,7 +92,7 @@ fn test_verify_signature_overflowing_signature_r() {
 }
 
 #[test]
-#[available_gas(100000000)]
+#[available_gas(l2_gas: 100000000)]
 fn test_verify_signature_overflowing_signature_s() {
     let (msg_hash, mut signature, _, _, public_key) = get_message_and_signature();
     let is_valid = is_valid_signature::<

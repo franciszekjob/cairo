@@ -142,7 +142,7 @@ fn test_verify_eth_signature_invalid_signature() {
 }
 
 #[test]
-#[available_gas(100000000)]
+#[available_gas(l2_gas: 100000000)]
 fn test_verify_signature() {
     let (msg_hash, signature, public_key_x, public_key_y, _) = get_message_and_signature(false);
 
@@ -157,7 +157,7 @@ fn test_verify_signature() {
 }
 
 #[test]
-#[available_gas(100000000)]
+#[available_gas(l2_gas: 100000000)]
 fn test_verify_signature_invalid_signature() {
     let (msg_hash, signature, public_key_x, public_key_y, _) = get_message_and_signature(false);
 
